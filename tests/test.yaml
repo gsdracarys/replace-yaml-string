@@ -1,0 +1,18 @@
+app:
+  config:
+    https: true
+    grpc: false
+  port: 9990
+
+  secrets:
+    apiToken: <@VAULT::org::secret/api/integrations::api-token>
+    privateKey: <@VAULT::org::secret/api/integrations::private-key>
+    licenseFile: |
+      <@VAULT::org::secret/api/integrations::license-string-1>
+      ===
+      <@VAULT::org::secret/api/integrations::license-string-2>
+      ===
+      <@VAULT::org::secret/api/integrations::license-string-3>
+      ===
+      <@VAULT::org::secret/api/integrations::license-string-4>
+    userAuth: "<@VAULT::org::secret/api/integrations::username>:<@VAULT::org::secret/api/integrations::password>"
